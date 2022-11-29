@@ -1,8 +1,16 @@
+//------------------------------------------------------------------------------
+// outputs
+//------------------------------------------------------------------------------
+
 // console.log('Hello World'); // printing
 
 // alert('Helllo');
 
 // document.write('Hello From Javascript'); // to print in the document
+
+//------------------------------------------------------------------------------
+// comments
+//------------------------------------------------------------------------------
 
 // single line comment
 
@@ -15,37 +23,34 @@ console.log(object);
 console.log(object);
 */
 
+//------------------------------------------------------------------------------
 // var, let, const
-// console.log(myGlobalVar);
+//------------------------------------------------------------------------------
 
+// console.log(myGlobalVar); // var => can access the variable before declaration
 // var myGlobalVar = 5;
-
 // console.log(myGlobalVar);
 
-// console.log(myLetVar); // Cannot access 'myLetVar' before initialization
-
+// console.log(myLetVar); // let => Cannot access 'myLetVar' before initialization
 // let myLetVar = 5;
-
 // console.log(myLetVar);
 
 // var test = 'test';
 // console.log(test);
-// var test = 'new test';
-// console.log(test); var can be redeclare
+// var test = 'new test'; var can be redeclare
+// console.log(test);
 
 // let test = 'test';
 // console.log(test);
-// let test = 'new test';
-// console.log(test); let can not be redeclare
+// let test = 'new test'; let can not be redeclare => error
+// console.log(test);
 
 // var test = 'my test';
 // for (let i = 0; i < 2; i++) {
-//   var test = 'his test';
+//   var test = 'his test'; // redeclare
 //   console.log(test);
 // }
-// console.log(test); // print "his test"
-
-// console.log('*'.repeat(10));
+// console.log(test); // print "his test" => test is the redeclare one
 
 // let testLet = 'my test';
 // for (let i = 0; i < 2; i++) {
@@ -60,6 +65,8 @@ console.log(object);
 //   console.log(test);
 // }
 // console.log(test); // it will print "his test"
+
+//------------------------------------------------------------------------------
 
 // console.log(1 + 2);
 // console.log(1 + '2');
@@ -157,6 +164,11 @@ console.log(object);
 
 // console.log(bilal);
 
+//------------------------------------------------------------------------------
+// functions
+//------------------------------------------------------------------------------
+
+// regular function
 // function functionName () {
 // }
 
@@ -164,11 +176,13 @@ console.log(object);
 //   console.log(value);
 // }
 
+// arrow function
 // const println = (value) => {
 //   console.log(value);
 // };
 
 // const println = (value) => console.log(value);
 
+// calling function (execute or invoke)
 // println('Rayan');
 // println(6);
