@@ -1,189 +1,196 @@
-// (function regFunc(x) {
-//   console.log('test');
-//   return x;
-// })(); // self invoke
-
-// const arrowFunc = (x) => x;
-
-// regFunc()
-
-// (function regFunc() {
-//   console.log(this);
-// })(); // window Obj
-
-// function regFunc() {
-//   console.log(this);
-// }
-// regFunc();
-
-// const arrowFunc = () => {
-//   console.log(this);
+// const myObject = {
+//   name: 'Hadeel',
+//   age: 21,
+//   favColor: 'pink',
 // };
 
-// arrowFunc();
+// console.log(myObject);
+// console.log(Object.keys(myObject)); // to get all keys of the object
 
-// const myObj = {
-//   name: 'Ashraf',
-//   func: function () {
-//     console.log(this);
-//   },
-// };
+//-----------------------------------------------------
 
-// myObj.func(); // myObj
+// if (true) console.log('true');
 
-// const myNewObj = {
-//   name: 'Ashraf',
-//   func: () => {
-//     console.log(this);
-//   },
-// };
-
-// myNewObj.func(); // window
-
-// function testRegFunc() {
-//   console.log(this);
+// if (true) {
+//   console.log('true');
+//   console.log('true2');
 // }
 
-// const myObj = {
-//   name: 'Ashraf',
-// };
-
-// testRegFunc.call(myObj); // myObj
-// testRegFunc.apply(myObj); // myObj
-
-// function test(x) {
-//   console.log(x);
+// if (1 === 2) {
+//   console.log('true');
+//   console.log('true2');
+// } else {
+//   console.log('not true');
 // }
 
-// new test(4); // 4
+// if (1 === 2) {
+//   console.log('true');
+//   console.log('true2');
+// } else if (1 === 3) {
+//   console.log('not true');
+// } else {
+//   console.log('not not true');
+// }
 
-// const test = (x) => {
-//   console.log(x);
+//-----------------------------------------------------
+
+// true === 1 ? console.log(true) : console.log(false);
+// true === 1 || false === 0 ? console.log(true) : console.log(false);
+
+//-----------------------------------------------------
+
+// console.log(Math.round(Math.random() * 10)); 0 to 10
+// console.log(Math.floor(Math.random() * 11)); 0 to 10
+// console.log(Math.ceil(Math.random() * 9)); 1 to 10
+
+//-----------------------------------------------------
+
+// const color = 'green';
+
+// switch (color) {
+//   case 'red':
+//     console.log('its Red');
+//     break;
+//   case 'blue':
+//     console.log('its blue');
+//     break;
+//   default:
+//     console.log('its not one of the options');
+// }
+
+//-----------------------------------------------------
+
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+
+// let i = 0;
+// while (i < 10) {
+//   console.log(i);
+//   i++;
+// }
+
+//-----------------------------------------------------
+
+// const arr = ['a', 'b', 'c', 'd'];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(i, arr[i]);
+// }
+
+// for (let item in arr) {
+//   console.log(item, arr[item]);
+// }
+
+// for (let item of arr) {
+//   console.log(item);
+// }
+
+//-----------------------------------------------------
+
+// const myObject = {
+//   name: 'Hadeel',
+//   age: 21,
+//   favColor: 'pink',
 // };
 
-// new test(4); // error
+// for (let item in myObject) {
+//   console.log(item);
+// }
 
-// class testClass2 {
-//   name = 'Rana';
-//   print() {
-//     console.log(this);
+// for (let item of myObject) {
+//   console.log(item);
+// }
+
+//-----------------------------------------------------
+
+// const myStr = 5678;
+
+// const myArr = [...myStr.toString()];
+
+// console.log(myArr);
+
+//-----------------------------------------------------
+
+// const myFunc = (name = 'Name not found') => {
+//   console.log(name);
+// };
+
+// myFunc('Matar');
+// myFunc();
+// myFunc();
+
+//-----------------------------------------------------
+
+// function sum(name, ...hadeel) {
+//   let sum = 0;
+//   for (let arg of hadeel) sum += arg;
+//   console.log(name);
+//   return sum;
+// }
+
+// let x = sum('4', 9, 16);
+
+// console.log(x);
+
+//-----------------------------------------------------
+
+// const myDiv = document.querySelector('div');
+// const myDiv = document.getElementById('myDev');
+// const myInput = document.getElementById('myInput');
+// const myAnchor = document.querySelector('a');
+// console.log(myDiv);
+
+// myDiv.innerHTML = 'not Hello';
+
+// myAnchor.target = '_blank';
+// myAnchor.href = 'https://google.com';
+
+// myDiv.style.backgroundColor = 'red';
+
+// console.log(myDiv.style);
+
+// myDiv.addEventListener('mousemove', function () {
+//   myDiv.style.backgroundColor = 'blue';
+// });
+
+// myDiv.addEventListener('mouseleave', function () {
+//   myDiv.style.backgroundColor = 'red';
+// });
+
+// myAnchor.onclick = () => {
+//   myAnchor.style.color = 'pink';
+// };
+
+// myAnchor.onblur = () => {
+//   myAnchor.style.color = 'green';
+// };
+
+// myInput.addEventListener('keypress', (e) => {
+//   if (e.target.value.length > 50) {
+//     e.preventDefault();
 //   }
-// }
+//   document.querySelector('span').innerHTML = 51 - e.target.value.length;
+//   console.log(50 - e.target.value.length);
+// });
 
-// const Test2 = new testClass2();
-// Test2.print();
+//-----------------------------------------------------
 
-// class testClass {
-//   name = 'Rana';
-//   test = () => {
-//     console.log(this);
-//   };
-// }
+const myDiv = document.getElementById('myDiv');
+const myBtns = document.querySelectorAll('button');
 
-// const Test = new testClass();
-// Test.test();
+const arrayData = ['text alsdjfhal', 'text not asdfkgjsd;fl', 'text is asdfkgjsd;fl', 'text are asdfkgjsd;fl'];
 
-// ---------------------------------
+const dataObject = {
+  0: 'text alsdjfhal',
+  1: 'text not asdfkgjsd;fl',
+  2: 'text is asdfkgjsd;fl',
+  3: 'text are asdfkgjsd;fl',
+};
 
-// const user = {
-//   name: 'Ezz',
-//   age: 23,
-//   DateOfBirth: new Date('07-09-1999'),
-//   jobs: ['programmer', 'engineer'],
-//   address: {
-//     street: 'Omar Al mokhtar',
-//     number: '',
-//   },
-// };
-
-// console.log(user.address.street);
-
-// const myCopy = { user: { ...user } };
-
-// const testObj = new Object(user);
-
-// myCopy.name = 'Hasan';
-// myCopy.user.name = 'Wasim';
-
-// console.log(myCopy.name);
-// console.log(myCopy.user.name);
-// console.log(user.name);
-
-// console.log(testObj);
-
-// function test() {
-//   return arguments;
-// }
-// console.log(test(5, 6, 3));
-
-// const test = (...args) => {
-//   return args;
-// };
-// console.log(test(5, 6, 3));
-
-// ---------------------------------
-
-// const name = 'abd';
-// const yearOfBirth = 2001;
-// const myText = 'Hello, my name is ' + name;
-
-// console.log(myText);
-
-// const myText = `Hello, my name is ${name}, and my age is ${2022 - yearOfBirth}
-// I hate you
-// and I don't like him`;
-// console.log(myText);
-
-// let testText =
-//   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem rerum alias repudiandae. Molestiae sunt doloremque mollitia sit voluptate. Dolor veritatis culpa rerum officia necessitatibus. Ex nobis repellat qui aliquid nemo!';
-
-// testText = testText.concat('and I hate you');
-// console.log(testText.split(' '));
-// console.log('*'.repeat(10));
-
-// const myString = new String('Hello World');
-// console.log(myString.valueOf());
-
-// const textNumber = '7.5';
-
-// console.log(parseFloat(textNumber));
-// console.log(parseInt(textNumber));
-// console.log(Number(textNumber));
-// console.log(+textNumber);
-
-// const myArr = [1, 2, 3];
-
-// const array1 = [1, 4, 9, 16];
-
-// pass a function to map
-// const map1 = array1.map((x) => x * 2);
-// const forEach = array1.forEach((x) => x * 2);
-
-// console.log(map1);
-// console.log(forEach);
-// console.log(array1);
-
-// expected output: Array [2, 8, 18, 32]
-
-// ---------------------------------------
-// const array1 = ['M', 'O', 'H', 'A'];
-// // MOHA
-
-// const array1 = [1, 2, 3, 4];
-// // 0 + 1 + 2 + 3 + 4
-// const initialValue = 0;
-// const sumWithInitial = array1.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
-
-// console.log(sumWithInitial);
-// expected output: 10
-
-const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0, 'Feb');
-// inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
-
-months.splice(4, 1, 'May');
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+myBtns.forEach((button, index) => {
+  button.onclick = function () {
+    // myDiv.textContent = arrayData[index];
+    myDiv.textContent = dataObject[index];
+  };
+});
