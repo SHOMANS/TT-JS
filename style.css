@@ -1,0 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+
+div {
+  background-color: aqua;
+  border: 10px solid #222;
+  margin: 2rem 0;
+  height: 500px;
+}
+
+/* button {
+  background-color: beige;
+  border: 2px solid #111;
+  padding: 10px 16px;
+
+  position: fixed;
+  left: 40px;
+  bottom: 20px;
+
+  font-size: large;
+
+  cursor: pointer;
+
+  display: none;
+} */
