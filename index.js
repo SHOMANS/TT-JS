@@ -1,120 +1,126 @@
 // const myButton = document.querySelector('button');
+// const myDiv = document.querySelector('div');
 
-// window.onscroll = () => {
-//   if (window.scrollY > 200) {
-//     myButton.style.display = 'block';
-//   } else {
-//     myButton.style.display = 'none';
+// const langs = {
+//   ar: {
+//     buttonText: 'en',
+//     divText: 'مرحبا أيها العالم',
+//   },
+//   en: {
+//     buttonText: 'العربية',
+//     divText: 'Hello World',
+//   },
+// };
+
+// let lang = localStorage.getItem('lang') || 'en';
+
+// const changeLangs = (lang) => {
+//   myButton.textContent = langs[lang].buttonText;
+//   myDiv.textContent = langs[lang].divText;
+//   // if (lang === 'en') {
+//   //   myButton.textContent = langs.en.buttonText;
+//   //   myDiv.textContent = langs.en.divText;
+//   // } else {
+//   //   myButton.textContent = langs.ar.buttonText;
+//   //   myDiv.textContent = langs.ar.divText;
+//   // }
+// };
+
+// const toggleLang = () => {
+//   lang = lang === 'en' ? 'ar' : 'en';
+//   window.localStorage.setItem('lang', lang);
+//   changeLangs(lang);
+// };
+
+// changeLangs(lang);
+
+// myButton.onclick = toggleLang;
+
+// --------------------------------------------
+
+// const xhr = new XMLHttpRequest();
+
+// xhr.onreadystatechange = () => {
+//   if (xhr.readyState === 4 && xhr.status === 200) {
+//     console.log(JSON.parse(xhr.response));
+//   } else if (xhr.readyState === 4 && xhr.status !== 200) {
+//     throw Error('sth went wrong');
 //   }
 // };
 
-// myButton.addEventListener('click', () => {
-//   window.scrollTo(0, 0);
-//   // window.scrollBy(0, 100);
-// });
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+// xhr.send();
 
-// ---------------------------------------------
+// const callApi = async (method, url) => {
+//   const xhr = new XMLHttpRequest();
 
-// const myButton = document.querySelector('button');
+//   xhr.onreadystatechange = () => {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//       return JSON.parse(xhr.response);
+//     } else if (xhr.readyState === 4 && xhr.status !== 200) {
+//       throw Error('sth went wrong');
+//     }
+//   };
 
-// myButton.onclick = () => {
-//   window.location.assign('https://google.com');
+//   xhr.open(method, url, true);
+//   xhr.send();
 // };
 
-// console.log(window.history);
+// callApi('GET', 'https://jsonplaceholder.typicode.com/posts').then((res) => console.log(res));
 
-// ---------------------------------------------
+// --------------------------------------------
 
-// window.console.log('asdfasd');
-// for (let i = 0; i < 2; i++) {
-//   let name = 'myName';
-//   console.log(window);
-// }
-
-// ---------------------------------------------
-
-// var x = 'global';
-// console.log(window);
-
-// const p = () => {
-//   var x = 'local';
-//   console.log(`local : ${x}   global : ${window.x}`);
+// const myPost = {
+//   userId: 1,
+//   title4234: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+//   body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
 // };
 
-// p();
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(myPost),
+// })
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch((error) => {
+//     console.log('error', error);
+//   });
 
-// ---------------------------------------------
+// console.log(myData);
 
-// let x = 'global';
-// console.log(window);
+// --------------------------------------------
 
-// const p = () => {
-//   let x = 'local';
-//   console.log(`local : ${x}   global : ${window.x}`);
-// };
+fetch('https://jsonplaceholder.typicode.com/posts/1', {})
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.log('error', error);
+  });
 
-// p();
+// --------------------------------------------
 
-// ---------------------------------------------
+const myPost = {
+  userId: 1,
+  title: 'new',
+  body: 'new',
+};
 
-// const myButton = document.querySelector('button');
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+  method: 'delete',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  // body: JSON.stringify(myPost),
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.log('error', error);
+  });
 
-// let stopWatch = 0;
+console.log(myData);
 
-// const count = setInterval(() => {
-//   stopWatch += 1;
-//   if (stopWatch === 3) {
-//     clearInterval(count);
-//   }
-//   console.log(stopWatch);
-// }, 1000);
-
-// myButton.onclick = () => {
-//   clearInterval(count);
-// };
-
-// ---------------------------------------------
-
-// const game = setTimeout(() => {
-//   console.log('game over');
-// }, 3000);
-
-// myButton.onclick = () => {
-//   clearTimeout(game);
-// };
-
-// ---------------------------------------------
-
-// const themeChange = (theme) => {
-//   console.log(theme);
-//   localStorage.setItem('theme', theme);
-//   document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white';
-// };
-
-// const darkButton = document.getElementById('dark');
-// const lightButton = document.getElementById('light');
-
-// darkButton.onclick = () => themeChange('dark');
-// lightButton.onclick = () => themeChange('light');
-
-// ---------------------------------------------
-
-const myButtons = document.querySelectorAll('button');
-
-// console.log(myButtons); // its a collection of buttons
-
-myButtons.forEach((button) => {
-  // we loop on the collection like the array and apply function on every button
-
-  // console.log(button);
-  button.onclick = () => {
-    // const theme = button.id;
-    const { id: theme } = button; // destructure the is from button parameter (object) then rename it to theme
-    console.log(theme);
-    localStorage.setItem('theme', theme);
-    document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white';
-  };
-});
-
-const theme = localStorage.getItem('theme');
-document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white';
+// --------------------------------------------
