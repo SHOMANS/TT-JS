@@ -114,52 +114,72 @@
 
 // fetch('https://jsonplaceholder.typicode.com/todos/1')
 //   .then((response) => response.json())
+//   .then((json) => {
+//     console.log(json);
+//     return json;
+//   })
 //   .then((json) =>
-//     fetch('https://jsonplaceholder.typicode.com/todos/1', {
+//     fetch('https://jsonplaceholder.typicode.com/todos/' + json.id, {
 //       method: 'put',
-//       body: {
-//         title: 'delectus aut autem',
+//       body: JSON.stringify({
+//         title: 'new',
+//       }),
+//       headers: {
+//         'Content-type': 'application/json; charset=UTF-8',
 //       },
 //     })
 //       .then((response) => response.json())
-//       .then()
+//       .then((json) => console.log(json))
+//       .catch((err) => console.log(err))
+//       .finally(() => {
+//         console.log('fin1');
+//       })
 //   )
 //   .catch((err) => console.log(err))
+//   .finally(() => {
+//     console.log('fin2');
+//   });
 // --------------------------------------------
 
 // async function newFunc2() {}
 
 (async () => {
-  // get todo which has id 1
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-  const data = await response.json();
-  console.log('data', data);
+  try {
+    // get todo which has id 1
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = await response.json();
+    console.log('data', data);
 
-  // update todo which has id 1 that comes from the response of get
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos/' + data.id, {
-    method: 'put',
-    body: JSON.stringify({
-      title: 'new',
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  const data2 = await res.json();
-  console.log('data2', data2);
+    // update todo which has id 1 that comes from the response of get
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/' + data.id, {
+      method: 'put',
+      body: JSON.stringify({
+        title: 'new',
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const data2 = await res.json();
+    console.log('data2', data2);
 
-  // update todo which has id 1 that comes from the response of get again
-  const res2 = await fetch('https://jsonplaceholder.typicode.com/todos/' + data.id, {
-    method: 'put',
-    body: JSON.stringify({
-      title: 'new test',
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  const data3 = await res2.json();
-  console.log('data3', data3);
+    // update todo which has id 1 that comes from the response of get again
+    const res2 = await fetch('https://jsonplaceholder.typicode.com/todos/' + data.id, {
+      method: 'put',
+      body: JSON.stringify({
+        title: 'new test',
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const data3 = await res2.json();
+    console.log('data3', data3);
 
-  console.log('done');
+    console.log('done');
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log('fin');
+  }
 })();
